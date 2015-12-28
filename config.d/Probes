@@ -1,0 +1,20 @@
+*** Probes ***
+
++ FPing
+
+binary = /usr/bin/fping
+
++FPing6
+
+binary = /usr/bin/fping6
+blazemode = true
+hostinterval = 1.5
+mininterval = 0.001
+offset = 50%
+packetsize = 5000
+pings = 20
+sourceaddress = ::1
+step = 300
+timeout = 1.5
+tos = 0x20
+usestdout = true
