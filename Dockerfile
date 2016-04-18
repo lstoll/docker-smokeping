@@ -18,6 +18,7 @@ ADD config.d/ /etc/smokeping/config.d/
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
 ADD Targets /tmp/Targets
+ADD Probes /tmp/Probes
 ADD ssmtp.conf /tmp/ssmtp.conf
 ADD config /etc/smokeping/config
 RUN chmod -v +x /etc/service/*/run
