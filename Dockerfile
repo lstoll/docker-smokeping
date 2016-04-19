@@ -1,7 +1,7 @@
 FROM linuxserver/baseimage
 MAINTAINER LinuxServer.io <ironicbadger@linuxserver.io>
 # apache environment settings
-ENV APACHE_RUN_USER=abc APACHE_RUN_GROUP=users APACHE_LOG_DIR="/var/log/apache2" APACHE_LOCK_DIR="/var/lock/apache2" APACHE_PID_FILE="/var/run/apache2.pid"
+ENV APACHE_RUN_USER=abc APACHE_RUN_GROUP=users APACHE_LOG_DIR="/var/log/apache2" APACHE_LOCK_DIR="/var/lock/apache2" APACHE_PID_FILE="/var/run/apache2.pid" APACHE_PORT=80
 
 #Applying stuff
 RUN apt-get update && \
@@ -11,7 +11,6 @@ ln -s /etc/smokeping/apache2.conf /etc/apache2/conf-available/apache2.conf && \
 a2enconf apache2 && \
 a2enmod cgid && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
 
 #Adding Custom files
 ADD config.d/ /etc/smokeping/config.d/
